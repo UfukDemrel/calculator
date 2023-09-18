@@ -1,8 +1,10 @@
-body {
+
+@media screen and (max-width: 768px) {
+  body {
     height: 70%;
     background-color: white;
-  }
-  
+}
+
   .calculadora{
     grid-column-gap: 0;
     grid-row-gap: 0;
@@ -13,7 +15,94 @@ body {
     grid-template-rows: repeat(5,1fr);
     height: 500px;
     justify-content: center;
-    margin: 44% auto;
+    margin: 40% auto;
+    text-align: center;
+    width: 270px;
+    background-color: rgba(0,0,0,255);
+  }
+
+  input{
+    grid-area: 1 / 1 / 2 / 5; 
+    border:none;
+    font-size: 35px;
+    margin-top:90px;
+    margin-bottom:6px;
+    background-color: rgba(0,0,0,255); 
+  }
+  
+  .pantalla{
+      color: #fff;
+      text-align: right; 
+      margin-right:20px;
+  }
+  
+  .tecla{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:50px;
+    height: 50px;
+    border-radius:50%;
+    border: none;
+    color:#fff;
+    cursor: pointer;
+    margin-left:7px;
+    font-size:23px;
+  }
+  
+  .especial{
+    background-color:rgba(160,160,160,255);
+    color:rgba(0,0,0,255);
+  }
+  .especial:hover{
+    background-color:rgba(200, 200, 200, 255);
+  }
+  
+  .signo{
+   background-color:rgba(246,153,6,255);
+  }
+  
+  .signo:hover{
+    background-color:rgba(255, 174, 56, 255);
+  }
+  
+  .numero{
+    background-color:rgba(49,49,49,255);
+  }
+  
+  .numero:hover{
+    background-color:rgba(79, 79, 79, 255);
+  }
+  .cero{
+    grid-area: 6 / 1 / 6 / 3; 
+    background-color:rgba(49,49,49,255);
+    padding: 10px 56px;
+    border-radius: 30px;
+    margin-bottom: 12px;
+  }
+  
+  .cero:hover{
+    background-color:rgba(79, 79, 79, 255);
+  }
+}
+
+@media screen and (min-width: 770px) {
+  body {
+    height: 70%;
+    background-color: white;
+}
+
+  .calculadora{
+    grid-column-gap: 0;
+    grid-row-gap: 0;
+    border: 1px solid;
+    border-radius: 30px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(5,1fr);
+    height: 500px;
+    justify-content: center;
+    margin: 10% auto;
     text-align: center;
     width: 270px;
     margin: 5% auto;
@@ -83,3 +172,5 @@ body {
   .cero:hover{
     background-color:rgba(79, 79, 79, 255);
   }
+}
+
