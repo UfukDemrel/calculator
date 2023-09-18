@@ -42,6 +42,16 @@ class Calculator extends Component {
     }
   };
 
+  inputPercent = () => {
+    const { displayValue } = this.state;
+    const percentValue = parseFloat(displayValue) / 100;
+  
+    this.setState({
+      displayValue: String(percentValue),
+      waitingForOperand: true
+    });
+  };
+
   clearDisplay = () => {
     this.setState({
       displayValue: '0',
@@ -97,7 +107,7 @@ class Calculator extends Component {
         <input type="text" className="pantalla" value={displayValue} readOnly />
         <button className="tecla especial" onClick={this.clearDisplay}>AC</button>
         <button className="tecla especial">+/-</button>
-        <button className="tecla especial">&#37;</button>
+        <button className="tecla especial" onClick={this.inputPercent}>&#37;</button>
         <button className="tecla signo" onClick={() => this.performOperation('÷')}>&#247;</button>
         <button className="tecla numero" onClick={() => this.inputDigit(7)}>7</button>
         <button className="tecla numero" onClick={() => this.inputDigit(8)}>8</button>
